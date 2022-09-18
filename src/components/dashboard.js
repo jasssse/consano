@@ -19,7 +19,7 @@ import {
     const [userData, setUserData] = useState({
       labels: UserData.map((data) => data.year),
       datasets: [{
-        label: "Users Gained",
+        label: "Wellness Score",
         data: UserData.map((data) => data.userGain),
       }],
     });
@@ -29,7 +29,7 @@ import {
       <>
         <Button onClick={onOpen}>Dashboard</Button>
   
-        <Modal isOpen={isOpen} onClose={onClose} size={size} backgroundColor='tomato'>
+        <Modal isOpen={isOpen} onClose={onClose} size={size}>
           <ModalOverlay />
           <ModalContent maxW="43.5rem">
             <ModalHeader>How you've been feeling</ModalHeader>
