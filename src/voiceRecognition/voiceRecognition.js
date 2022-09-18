@@ -1,22 +1,29 @@
 import React from "react";
 import "./voiceRecognition.css";
-import { ChakraProvider, color } from "@chakra-ui/react";
+import { ChakraProvider } from "@chakra-ui/react";
 import Dashboard from "../components/dashboard";
 import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition";
 import { extendTheme } from "@chakra-ui/react";
 import Logo from "../assets/logo.png";
+import sendData from "./data.js";
+
+
 const VoiceRecognition = (props) => {
   const {
     transcript,
-    listening,
     resetTranscript,
     browserSupportsSpeechRecognition,
   } = useSpeechRecognition();
 
   if (!browserSupportsSpeechRecognition) {
     return <span>Browser doesn't support speech recognition.</span>;
+  }
+
+  const handleSend = () => {
+    SpeechRecognition.stopListening();
+    sendData(transcript);
   }
 
   const theme = extendTheme({
@@ -32,7 +39,7 @@ const VoiceRecognition = (props) => {
   return (
     <div>
       <div class="w3-cell-row">
-          <img className="img" src={Logo}></img>
+          <img className="img" src={Logo} alt="img"></img>
       </div>
       <div className="App-header">
         <header>How are you feeling today?</header>
@@ -53,7 +60,8 @@ const VoiceRecognition = (props) => {
         </svg>
       </button>
       <div class="w3-cell-row">
-        <button className="App-stop" onClick={SpeechRecognition.stopListening}>
+        <button className="App-stop" onClick={
+          handleSend}>
           Stop
         </button>
         <button className="App-reset" onClick={resetTranscript}>
