@@ -1,0 +1,66 @@
+.App-header {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(40px + 2vmin);
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    padding-bottom: 5%;
+  }
+  
+  .App-link {
+    color: #61dafb;
+  }
+  
+  .App-microphone {
+    color: white;
+    border: none; 
+    background: transparent;
+    background-color: transparent;
+    border-radius: 100;
+    padding: 2%;
+    height: 40;
+    width: 40;
+  }
+  
+  .App-microphone:focus {
+    color: #53A2BE;
+    border: none; 
+    background: transparent;
+    background-color: transparent;
+    border-radius: 100;
+    padding: 2%;
+    height: 40;
+    width: 40;
+  }
+  .App-stop {
+    color: white;
+    border: none; 
+    background: transparent;
+    background-color: transparent;
+    font-size: calc(10px + 2vmin);
+  }
+  
+  .App-stop:focus {
+    color:#53A2BE;
+  }
+  
+  .App-reset {
+    color: white;
+    border: none; 
+    background: transparent;
+    background-color: transparent;
+    font-size: calc(10px + 2vmin);
+  }
+  
+  .App-reset:focus {
+    color: #53A2BE;
+  }
+  
+  .App-entry {
+    color: white;
+    font-size: calc(10px + 2vmin);
+    padding-top: 60;
+  }
